@@ -18,7 +18,7 @@ def choice_planet():
                    <title>Варианты выбора</title>
                 </head>
                 <body>
-                    <h1>Мое предложение: Марс</h1>
+                    <h1>Мой диалог с моим братом!</h1>
                     <h3 class="alert alert-success" role="alert">
                         Привет Юре!
                     </h3>
