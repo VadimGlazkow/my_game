@@ -1,6 +1,8 @@
 # импортируем библиотеки
 from flask import Flask, request
+from flask_ngrok import run_with_ngrok
 import logging
+import os
 
 # библиотека, которая нам понадобится для работы с JSON
 import json
@@ -13,6 +15,7 @@ import json
 # если бы такое обращение, например,
 # произошло внутри модуля logging, то мы бы получили 'logging'
 app = Flask(__name__)
+run_with_ngrok(app)
 
 # Устанавливаем уровень логирования
 logging.basicConfig(level=logging.INFO)
@@ -41,6 +44,8 @@ def main():
     # мы собираем словарь, который потом при помощи
     # библиотеки json преобразуем в JSON и отдадим Алисе
     response = {
+        'tts': '<speaker audio="dialogs-upload/6e2ea10c-2ffc-4b61-8a78-fcde2f7a09ff/\
+        fb5a72b6-4d21-452e-bcdd-70007bf367fb.opus">',
         'session': request.json['session'],
         'version': request.json['version'],
         'response': {
