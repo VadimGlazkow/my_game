@@ -5,12 +5,7 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def title():
-    return 'Миссия Колонизация Марса'
-
-
-@app.route('/choice/<planet_name>')
-def choice_planet(planet_name):
+def choice_planet():
     return f'''<!doctype html>
                 <html lang="en">
                 <head>
@@ -23,7 +18,7 @@ def choice_planet(planet_name):
                    <title>Варианты выбора</title>
                 </head>
                 <body>
-                    <h1>Мое предложение: {planet_name}</h1>
+                    <h1>Мое предложение: Марс</h1>
                     <h3 class="alert alert-light" role="alert">
                         Эта планета близка к Земле;
                     </h3>
